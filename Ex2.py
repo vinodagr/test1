@@ -42,8 +42,22 @@ def app():
 
     if submit_button:
         # Create input dataframe
-        input_df = pd.DataFrame({'tenth':[tenth],'twelth': [twelth], 'UG': [UG],'PG': [PG], 'Gender': [Gender],'UG_Course': [UG_Course],'10th Board':[10th Board],'12th Board':[12th Board],'12th Stream':[12th Stream],'Student Category':[Student Category],'Certification':[Certification],'Backlogs':[Backlogs],'Extracurricular':[Extracurricular]})
-        
+        #input_df = pd.DataFrame({'tenth':[tenth],'twelth': [twelth], 'UG': [UG],'PG': [PG], 'Gender': [Gender],'UG_Course': [UG_Course],'10th Board':[10th Board],'12th Board':[12th Board],'12th Stream':[12th Stream],'Student Category':[Student Category],'Certification':[Certification],'Backlogs':[Backlogs],'Extracurricular':[Extracurricular]})
+        input_df = pd.DataFrame({
+    'tenth': [tenth],
+    'twelth': [twelth],
+    'UG': [UG],
+    'PG': [PG],
+    'Gender': [Gender],
+    'UG_Course': [UG_Course],
+    '10th Board': [tenth_board],
+    '12th Board': [twelth_board],
+    '12th Stream': [twelth_stream],
+    'Student Category': [student_category],
+    'Certification': [certification],
+    'Backlogs': [backlogs],
+    'Extracurricular': [extracurricular]
+})
         # One-hot encode categorical variables
         # input_df['Gender'] = input_df['Gender'].map({'M': 1, 'F': 0})
         # input_df['UG_Course'] = input_df['UG_Course'].map({'1': 1, '2': 2,'3': 3})

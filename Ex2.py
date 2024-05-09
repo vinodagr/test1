@@ -5,7 +5,7 @@ import streamlit as st
 subprocess.call(['pip', 'install', 'scikit-learn'])
 
 # Now you can import it
-from scikit-learn.tree import DecisionTreeClassifier
+from sklearn.tree import DecisionTreeClassifier
 
 # Your Streamlit app code goes here
 

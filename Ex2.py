@@ -1,13 +1,3 @@
-import subprocess
-import streamlit as st
-
-# Install scikit-learn
-subprocess.call(['pip', 'install', 'scikit-learn'])
-
-# Now you can import it
-from sklearn.tree import DecisionTreeClassifier
-
-# Your Streamlit app code goes here
 
 
 import streamlit as st
@@ -20,8 +10,8 @@ from sklearn.metrics import accuracy_score
 df = pd.read_csv('mca_data.csv')
 
 # Split data into input and output variables
-X = df.drop(['Campus Placement'], axis=1)
-y = df['Campus Placement']
+X = df.drop(['Campus_placement'], axis=1)
+y = df['Campus_placement']
 
 # Split data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
@@ -52,22 +42,8 @@ def app():
 
     if submit_button:
         # Create input dataframe
-        #input_df = pd.DataFrame({'tenth':[tenth],'twelth': [twelth], 'UG': [UG],'PG': [PG], 'Gender': [Gender],'UG_Course': [UG_Course],'10th Board':[10th Board],'12th Board':[12th Board],'12th Stream':[12th Stream],'Student Category':[Student Category],'Certification':[Certification],'Backlogs':[Backlogs],'Extracurricular':[Extracurricular]})
-        input_df = pd.DataFrame({
-    'tenth': [tenth],
-    'twelth': [twelth],
-    'UG': [UG],
-    'PG': [PG],
-    'Gender': [Gender],
-    'UG_Course': [UG_Course],
-    '10th Board': [tenth_board],
-    '12th Board': [twelth_board],
-    '12th Stream': [twelth_stream],
-    'Student Category': [student_category],
-    'Certification': [certification],
-    'Backlogs': [backlogs],
-    'Extracurricular': [extracurricular]
-})
+        input_df = pd.DataFrame({'tenth':[tenth],'twelth': [twelth], 'UG': [UG],'PG': [PG], 'Gender': [Gender],'UG_Course': [UG_Course]})
+        
         # One-hot encode categorical variables
         # input_df['Gender'] = input_df['Gender'].map({'M': 1, 'F': 0})
         # input_df['UG_Course'] = input_df['UG_Course'].map({'1': 1, '2': 2,'3': 3})
